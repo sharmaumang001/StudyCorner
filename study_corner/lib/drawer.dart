@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'quePaper.dart';
+import 'sign_in.dart';
+import 'LoginPage.dart';
+import 'package:share/share.dart';
 
+import 'user_profile.dart';
 class DrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,10 +15,24 @@ class DrawerWidget extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
+            CircleAvatar(
+              
+              child: ClipOval(
+                
+                child: Image.network(
+                  user_imageUrl.substring(0, user_imageUrl.length - 5) + 's400-c',
+                  height: 130,
+                  width: 130,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              radius: 60,
+              backgroundColor: Colors.transparent,
+            ),
             Container(
               child: Center(
                 child: Text(
-                  'Hi User!',
+                  'Hi ${user_name}!',
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.w400,
@@ -35,6 +54,19 @@ class DrawerWidget extends StatelessWidget {
                 ),
               ),
             ),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 5.0),
+              child: Center(
+                child: Text(
+                  user_email,
+                  style: TextStyle(
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
             ListTileWidget(
               text: 'Home',
               icon: Icon(
@@ -42,6 +74,25 @@ class DrawerWidget extends StatelessWidget {
                 color: Colors.black,
               ),
               onTap: () {},
+            ),
+             ListTileWidget(
+              text: 'My Profile',
+              icon: Icon(
+                Icons.people,
+                color: Colors.black,
+              ),
+              onTap: () {
+                  
+               Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return UserProfile();
+                },
+              ),
+            );
+
+            
+              },
             ),
             ListTileWidget(
               text: 'Exam Corner',
@@ -51,6 +102,7 @@ class DrawerWidget extends StatelessWidget {
               ),
               onTap: () {
                 //TODO:Navigate to that screen
+                Navigator.pushNamed(context, quePaper.id);
                 print('done');
               },
             ),
@@ -82,7 +134,10 @@ class DrawerWidget extends StatelessWidget {
                 Icons.share,
                 color: Colors.black,
               ),
-              onTap: () {},
+              onTap: () {
+                Share.share('Visit my website https://google.com/',
+                    subject: 'Install this app Now!');
+              },
             ),
             ListTileWidget(
               text: 'Logout',
@@ -90,7 +145,13 @@ class DrawerWidget extends StatelessWidget {
                 Icons.logout,
                 color: Colors.black,
               ),
-              onTap: () {},
+              onTap: () {
+                signOutGoogle();
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (context) {
+                  return LoginPage();
+                }), ModalRoute.withName('/'));
+              },
             ),
           ],
         ),

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "956955348390",
+    "project_id": "studycorner-d7caa",
+    "storage_bucket": "studycorner-d7caa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956955348390:android:48a7cf72a84c3b90815367",
+        "android_client_info": {
+          "package_name": "com.app.study_corner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956955348390-5t38g00tnubhl7cpk7g5s71i9kj1c5sv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.study_corner",
+            "certificate_hash": "ce8005f56940438cdbb784855a743e3410d9b642"
+          }
+        },
+        {
+          "client_id": "956955348390-6u2hdtrl9q679vlc9b4la9kv835iojpc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByGbtOlc0cqfRekoLZNtrLxLlK6DK3jLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956955348390-6u2hdtrl9q679vlc9b4la9kv835iojpc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
