@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:study_corner/feedback.dart';
+import 'exams.dart';
 
 import 'drawer.dart';
 import 'user_details.dart';
@@ -15,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   List<Widget> widgetOptions = [
     AboutScreen(),
-    UserForm(),
+    ExamScreen(),
     
     FeedBack(),
     Container(
